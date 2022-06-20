@@ -1,6 +1,5 @@
 '''Checkout Kata function that implements the proposed supermarket checkout system
    The input to the function is a string of all the items e.g. CCC, ACC
-
 '''
 
 from collections import Counter
@@ -17,15 +16,15 @@ def checkoutKata(items):
 
     aPrice = aCount * 0.50
     bPrice = (bCount//2 * 1.25) + 0.75
+    cDiscount = cCount//3
 
-    #print(aPrice, bPrice)
-
-
+    if cDiscount%3 == 0:
+        cPrice = (cCount * 0.25)
     
 
-       
+    #print(aPrice, bPrice, cPrice)
+    
 
 
 
-
-checkoutKata("AAAABBBBBBBCCCCCCCC")   
+checkoutKata("AAAABBBBBBBCCCCCCCCC")   
