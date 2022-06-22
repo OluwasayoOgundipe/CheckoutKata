@@ -2,7 +2,7 @@
    The input to the function is a string of all the items e.g. CCC, ACC
 '''
 
-from collections import Counter
+from collections import Counter #Counter class to create a frequency dictionary
 
 
 def checkoutKata(items):
@@ -25,18 +25,24 @@ def checkoutKata(items):
     else:
         bPrice = 0
 
-    cDiscount = cCount//3
-    cPrice = (cCount * 0.25) - (cDiscount *0.25)
+    if cCount > 3:
+        cDiscount = cCount//3
+        cPrice = (cCount * 0.25) - (cDiscount * 0.25)
+
+    else:
+        cPrice = cCount * 0.25    
 
     print(aPrice, bPrice, cPrice)
 
     total = aPrice + bPrice + cPrice
+    ans = "£" + str(total)
     
-    print(total)
+    print("Your total is: ",ans)
+    print("total", total)
 
-    return
+    return total
     
 
 
 
-checkoutKata("CCCC")   
+checkoutKata("CCC")   
