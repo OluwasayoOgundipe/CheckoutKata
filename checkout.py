@@ -15,16 +15,28 @@ def checkoutKata(items):
     cCount = itemDict["C"]
 
     aPrice = aCount * 0.50
-    bPrice = (bCount//2 * 1.25) + 0.75
+
+    if bCount > 0 and bCount%2 != 0:
+        bPrice = (bCount//2 * 1.25) + 0.75
+
+    elif bCount > 0 and bCount%2 == 0:
+        bPrice = (bCount/2) * 1.25   
+
+    else:
+        bPrice = 0
+
     cDiscount = cCount//3
+    cPrice = (cCount * 0.25) - (cDiscount *0.25)
 
-    if cDiscount%3 == 0:
-        cPrice = (cCount * 0.25)
+    print(aPrice, bPrice, cPrice)
+
+    total = aPrice + bPrice + cPrice
+    
+    print(total)
+
+    return
     
 
-    #print(aPrice, bPrice, cPrice)
-    
 
 
-
-checkoutKata("AAAABBBBBBBCCCCCCCCC")   
+checkoutKata("CCCC")   
