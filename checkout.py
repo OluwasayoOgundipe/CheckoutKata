@@ -28,19 +28,25 @@ def checkoutKata(items):
     else:
         bPrice = 0
 
+    #implementing the correct 3 for 1 discount for item c
     if cCount > 3:
-        cDiscount = cCount//3
-        cPrice = (cCount * 0.25) - (cDiscount * 0.25) #creating the discount for item c
+        cDiscount = cCount//3  
+        cPrice = (cCount * 0.25) - (cDiscount * 0.25) 
 
     else:
         cPrice = cCount * 0.25    
 
     total = aPrice + bPrice + cPrice
-    ans = "£" + str(total)
+
+    if len(str(total)) < 4: #formatting the answer to 2dp to print nicer
+        ans = "£" + str(total) + "0"
+
+    else:
+        ans = "£" + str(total)    
     
-    print("Your total is: ",ans)
+    print("The total price of your basket is: ", ans)
 
     return total
     
     
-checkoutKata("CCC")   
+checkoutKata("CCCCCCCC")   
