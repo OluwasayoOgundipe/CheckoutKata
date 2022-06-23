@@ -11,7 +11,6 @@ def checkoutKata(items):
 
     itemDict = Counter(items) #using the counter class to create the frequency dictionary
 
-
     #retrieving the number of each item from the frequency dictionary
     aCount = itemDict["A"]
     bCount = itemDict["B"]
@@ -49,4 +48,4 @@ def checkoutKata(items):
     return total
     
     
-checkoutKata("CCCCCCCC")   
+checkoutKata("CCCCCCCC")   #function call to checkoutKata
